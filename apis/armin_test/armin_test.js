@@ -1,4 +1,5 @@
 exports.handler = async function(event, context) {
+  const requestBody = JSON.parse(event.body);
   var response = {
   "statusCode": 200,
   "headers": {
@@ -8,7 +9,7 @@ exports.handler = async function(event, context) {
   "multiValueHeaders": { 
     "X-Custom-Header": ["My value", "My other value"],
   },
-  "body": event.payload+ " received body is " + event.name
+  "body": event.payload+ " received body is " + event.name + " second method: " + requestBody.name
 }
 return response
 }
