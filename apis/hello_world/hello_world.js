@@ -8,7 +8,7 @@ exports.handler = async function(event, context) {
   "multiValueHeaders": { 
     "X-Custom-Header": ["My value", "My other value"],
   },
-  "body": "hello" + event.body.name
+  "body": "hello" + event.name
 }
 return response
 }
